@@ -1,7 +1,0 @@
-#Picture is not used anymore by Tidal. To bypass the 'picture' error you need to  comment out line 77 in user.py file from your tidalapi folder:
-self.picture_id = json_obj['picture']
-#or change it to:
-self.picture_id = json_obj['picture'] if 'picture' in json_obj else ''
-
-#https://github.com/tamland/python-tidal/issues/129
-#tidalapi/user.py
