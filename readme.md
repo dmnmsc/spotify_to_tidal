@@ -33,3 +33,17 @@ python3 sync.py --uri 1ABCDEqsABCD6EaABCDa0a
 ```
 
 See example_config.yml for more configuration options, and `sync.py --help` for more options.
+
+Tidal logging fix
+-----------
+Picture is not used anymore by Tidal. To bypass the 'picture' error you need to  comment out line 77 in `user.py` file from your local `tidalapi folder`:
+```bash
+#self.picture_id = json_obj['picture']
+```
+
+or change it to:
+```bash
+self.picture_id = json_obj['picture'] if 'picture' in json_obj else ''
+```
+
+Check https://github.com/tamland/python-tidal/issues/129
